@@ -126,7 +126,7 @@ def read_silver_resume(spark : SparkSession, datamart_dir : str, snapshot_date :
     )  
     
     df_selected = df_fixed.select(
-        "id", "name", "location_preference", "work_authorizaton",
+        "id", "name", "location_preference", "work_authorization",
         "employment_type_preference", "hard_skills",
         "soft_skills", "languages",
         "experience", "education",
@@ -136,4 +136,4 @@ def read_silver_resume(spark : SparkSession, datamart_dir : str, snapshot_date :
     filename = "resume_" + str(snapshot_date.year) + "-" + str(snapshot_date.month) + ".parquet"
     output_path = os.path.join(datamart_dir, filename)
     df_selected.write.mode("overwrite").parquet(output_path)
-    
+        
