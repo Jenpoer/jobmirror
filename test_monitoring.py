@@ -1,7 +1,7 @@
 """
 Testing file for monitoring file
 """
-
+import pyspark
 import os
 from utils.metrics_and_monitoring.compare_gt_pred import get_model_metrics
 from utils.metrics_and_monitoring.monitoring_features import compare_feature_store, read_gold_table
